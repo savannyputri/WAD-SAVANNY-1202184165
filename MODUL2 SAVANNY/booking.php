@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <title>Booking</title>
 
@@ -12,14 +13,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style>
-    #coba{
-        width: 500px;
-        height: 400px;
-        border-radius: 10px;
-        margin: 70px;
-    }
-</style>
+    <style>
+        #coba {
+            width: 500px;
+            height: 400px;
+            border-radius: 10px;
+            margin: 70px;
+        }
+    </style>
 
 </head>
 
@@ -27,7 +28,7 @@
     <ul class="nav justify-content-center bg-primary">
         <li class="nav-item"> <a class="nav-link active text-light" href="home.php">Home</a> </li>
         <li class="nav-item"> <a class="nav-link text-light" href="booking.php">Booking</a> </li>
-        
+
     </ul>
     </nav>
 
@@ -46,7 +47,7 @@
                         <div class="form-group">
                             <label for="inDate" class="col-sm-3 col-form-label">Check-In</label>
                             <div class="col-sm-12">
-                                <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" name="inputDate" value="<?php echo date('Y-m-d'); ?>" required>
+                                <input type="date" class="form-control" id="inputdate" placeholder="dd/mm/yyyy" name="inputdate" value="<?php echo date('Y-m-d'); ?>" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -61,9 +62,9 @@
                         <div class="form-group">
                             <label class="col-sm-12 col-form-label" for="sel1">Room Type</label>
                             <div class="col-sm-12">
-                                <?php
+
                                 if (empty($_GET['room'])) {
-                                    echo '
+                                echo '
                                 <select name="roomList" class="form-control" id="roomList" onchange="change_image()">
                                     <option id="1" value="Standard">
                                         Standard</option>
@@ -73,26 +74,25 @@
                                         Luxury</option>
                                 </select>';
                                 } else {
-                                    $roomType = $_GET['room'];
-                                    $stat = is_null($roomType);
-                                    if ($stat != 1) {
-                                        echo '
-                                        
-                                <input readonly name="roomList" type="text" class="form-control disabled"  id="roomList"  value="' . $roomType . '" required>';
-                                    } else {
-                                        echo '    <div class="col-sm-12">
-                                <select name="roomList" class="form-control" id="roomList" onchange="change_image()">
-                                    <option id="1" value="Standar">
-                                        Standard</option>
-                                    <option id="2" value="Superior">
-                                        Superior</option>
-                                    <option id="3" value="Luxury">
-                                        Luxury</option>
-                                </select>
-                            </div>';
-                                    }
+                                $roomType = $_GET['room'];
+                                $stat = is_null($roomType);
+                                if ($stat != 1) {
+                                echo '
+
+                                <input readonly name="roomList" type="text" class="form-control disabled" id="roomList" value="' . $roomType . '" required>';
+                                } else {
+                                echo ' <div class="col-sm-12">
+                                    <select name="roomList" class="form-control" id="roomList" onchange="change_image()">
+                                        <option id="1" value="Standar">
+                                            Standard</option>
+                                        <option id="2" value="Superior">
+                                            Superior</option>
+                                        <option id="3" value="Luxury">
+                                            Luxury</option>
+                                    </select>
+                                </div>';
                                 }
-                                ?>
+                                }
                             </div>
 
                         </div>
@@ -130,14 +130,14 @@
                         <?php
                         if (empty($_GET['img'])) {
                             echo '<img class="img-fluid roomPreview prev" src="Lux.jpg" alt="Pr">';
-                        } 
+                        }
                         ?>
                     </div>
-                    </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
     </div>
 
 

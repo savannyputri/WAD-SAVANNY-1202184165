@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <title>My Booking</title>
     <!-- Required meta tags -->
@@ -16,11 +17,12 @@
         }
     </style>
 </head>
+
 <body class="bg-light">
     <ul class="nav justify-content-center bg-primary">
         <li class="nav-item"> <a class="nav-link active text-light" href="home.php">Home</a> </li>
         <li class="nav-item"> <a class="nav-link text-light" href="booking.php">Booking</a> </li>
-        
+
     </ul>
 
     <div>
@@ -43,7 +45,6 @@
                     <tr>
                         <?php
                         $roomType = $_POST['roomList'];
-                        $duration = $_POST['duration'];
                         $roomPrice = 0;
                         $dateBook = date('d/m/Y', strtotime($_POST['inputDate']));
                         $dateCheckOut = date('d/m/Y', strtotime("+$duration days", strtotime($_POST['inputDate'])));
@@ -107,4 +108,4 @@
     </script>
 </body>
 
-</html> 
+</html>
