@@ -4,7 +4,6 @@ include('config.php');
 // if(isset($_POST['submit'])){
 function update($ID, $POST)
 {
-    global $conn;
     $nama = $POST['nama'];
     $deskripsi = $POST['deskripsi'];
     $tanggal = $POST['tanggal'];
@@ -12,7 +11,7 @@ function update($ID, $POST)
     $jamberakhir = $POST['berakhir'];
     $tempat = $POST['tempat'];
     $harga = $POST['harga'];
-    $benefit = implode(",", $POST['benefit']);
+    $benefit = [",", $POST['benefit']];
     $kategori = $POST['kategori'];
 
 
@@ -23,7 +22,7 @@ function update($ID, $POST)
     $filename = $_FILES['gambar']['name'];
     $ukuran = $_FILES['gambar']['size'];
     $temp = $_FILES['gambar']['tmp_name'];
-    $pathi = pathinfo($filename, PATHINFO_EXTENSION);
+    $pathi = [$filename, PATHINFO_EXTENSION];
 
 
 
