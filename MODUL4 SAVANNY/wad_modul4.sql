@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Nov 2020 pada 13.58
+-- Waktu pembuatan: 22 Nov 2020 pada 14.33
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -29,21 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `id` int(255) NOT NULL,
-  `user_id` varchar(255) NOT NULL,
+  `user_id` int(255) NOT NULL,
   `nama_barang` varchar(255) NOT NULL,
   `harga` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `cart`
---
-
-INSERT INTO `cart` (`id`, `user_id`, `nama_barang`, `harga`) VALUES
-(6, '2', 'love and beauty', 200000),
-(7, '2', 'skin care', 200000),
-(8, 'misbach', 'love ', 100000),
-(9, 'misbach', 'skin ', 200000),
-(10, 'misbach', 'care', 300000);
 
 -- --------------------------------------------------------
 
@@ -65,6 +54,16 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nama`, `email`, `no_hp`, `password`) VALUES
 (0, 'savanny putri safrina', 'savaniputrisafrina@yahoo.com', 82211150843, '$2y$10$NA7lKnXogMc5Z16UZMoVm.6TJI4NTwz/j3PIgSdsppx7TqwJa8nyG');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
